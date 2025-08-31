@@ -13,8 +13,12 @@ const calcState = {
     result: false
 }
 
-const selectOperator = (event) => {
+const selectOperator = event => {
 }
-
 const operatorBtns = document.querySelector(".operatorBtns");
 operatorBtns.addEventListener("click", selectOperator);
+
+const selectDigit = event => {
+}
+const numberBtns = document.querySelector(".numberBtns");
+numberBtns.addEventListener("click", selectDigit)
