@@ -65,5 +65,16 @@ const selectDigit = event => {
     if(event.target.dataset.operation === "decimal") calcState.decimalActive = true;
 }
 
+const deleteBtn = document.querySelector(".delete");
+deleteBtn.addEventListener("click", deleteCalc);
+
+function deleteCalc(event){
+    let currentDisplay = display.textContent;
+
+    if (currentDisplay === "") return
+
+    display.textContent = currentDisplay.substring(0, currentDisplay.length-1);
+}
+
 const numberBtns = document.querySelector(".numberBtns");
 numberBtns.addEventListener("click", selectDigit)
