@@ -13,12 +13,21 @@ const calcState = {
     result: false
 }
 
+const display = document.querySelector("#display");
+
 const selectOperator = event => {
 }
 const operatorBtns = document.querySelector(".operatorBtns");
 operatorBtns.addEventListener("click", selectOperator);
 
 const selectDigit = event => {
+    if (!event.target.matches(".number, .decimal")) return
+    if (calcState.decimalActive && event.target.dataset.operation === "decimal") return
+    
+    display.textContent += event.target.dataset.number;
+    if(event.target.dataset.operation === "decimal") calcState.decimalActive = true;
 }
+
+
 const numberBtns = document.querySelector(".numberBtns");
 numberBtns.addEventListener("click", selectDigit)
